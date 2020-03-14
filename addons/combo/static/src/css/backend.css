@@ -1,0 +1,14 @@
+@media screen and (max-width: 667px) {
+#oe_main_menu_navbar
+{
+background-color: transparent;
+    color: #000;
+    border: 0;
+    height: 10%;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #b9bbbb;
+    color: #000;
+    background: #b9bbbb;
+}
+}

@@ -1,0 +1,101 @@
+@primarygray: #b9bbbb;
+@color: #000;
+@trans: transparent;
+@borderwidth: 2px;
+@primary_green: #4dd298;
+@media (max-width: 450px) {
+  #oe_main_menu_navbar {
+    background-color: @trans;
+    border: 0;
+    padding: 2% 0 2% 2%;
+    border-top: @borderwidth solid @primarygray;
+    border-bottom: @borderwidth solid @primarygray;
+    margin-top: 3%;
+  }
+  .o_web_client {
+    .o_loading {
+      right: 42%;
+    }
+  }
+  .navbar-left {
+    display: none !important;
+  }
+  .navbar-inverse .navbar-toggle {
+    border-color: @trans;
+    background: @trans;
+    float: left;
+    .icon-bar {
+      background-color: @primarygray;
+    }
+  }
+  .o_mail_chat .btn-primary {
+    background-color: @primary_green;
+    border-color: @primary_green;
+  }
+  .o_mail_chat .btn-primary:hover {
+    .btn-primary();
+  }
+  .o_mail_chat .o_mail_chat_content .o_mail_no_content {
+    top: 10%;
+    padding-top: 0;
+    border: 1px solid @primarygray;
+    border-radius: 5px;
+    width: 96%;
+    margin: 2%;
+  }
+  .o_mail_thread .o_thread_title {
+    visibility: hidden;
+    font-size: 0;
+  }
+  .o_mail_thread .o_thread_title::after {
+    content: "Congrats!" !important;
+    font-size: 20px;
+    font-weight: bold;
+    visibility: visible;
+    color: #4dd298;
+  }
+  .o_mail_no_content:last-child {
+    .o_mail_thread .o_thread_title();
+  }
+  .o_mail_no_content:last-child::after {
+    content: "Your inbox is empty" !important;
+    font-size: 18px;
+    visibility: visible;
+    color: @primarygray;
+  }
+  .o_web_client {
+    .o_content {
+      .btn {}
+    }
+    .o_sub_menu {
+      position: absolute;
+      z-index: 1;
+      left: -50%;
+      .fa.fa-angle-double-right {
+        visibility: none !important;
+        font-size: 3em !important;
+        position: relative;
+        left: 183px;
+        top: -48px;
+        width: 10px;
+        z-index: 1;
+        color: rgb(200, 200, 200);
+      }
+    }
+    .o_control_panel>.o_cp_searchview {
+      display: none !important;
+    }
+    .o_control_panel>.o_cp_left {
+      width: 100%;
+    }
+    .o_control_panel>.o_cp_right {
+      display: none !important;
+      .o_dropdown {
+        width: 100%;
+      }
+      .o_cp_switch_buttons>.btn:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

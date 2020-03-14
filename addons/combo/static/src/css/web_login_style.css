@@ -1,0 +1,36 @@
+@media screen and (max-width: 667px) {
+.o_database_list {
+position:absolute;
+top:10%;
+padding: 30px;
+}
+
+.o_database_list .btn-primary {
+width:100%;
+	color: #FFF;
+  	background-color: #4dd298;
+  	border: 1px solid #4dd298;
+  	text-transform: uppercase;
+  	transition: background-color 0.5s ease;
+    font-weight: bold;
+}
+
+.o_database_list input,
+.o_database_list select {
+	background-color: transparent !important;
+	height:35px;
+	
+}
+
+.oe_login_buttons {
+	margin-top: 30px;
+	margin-bottom: 10px;
+      height:37px;
+
+}
+.oe_login_form {
+	margin-top: 30px;
+	margin-bottom: 10px;
+
+}
+}

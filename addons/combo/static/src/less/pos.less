@@ -1,0 +1,974 @@
+@loader_color: #cf83b8;
+@screen-xs-max: 400px;
+@screen-xs-min: 280px;
+@primary_green: #4dd298;
+@primary_green1: #6ec89b;
+.not_show {
+  visibility: hidden;
+}
+
+@media only screen and (min-device-width: @screen-xs-max) {
+  .screen-content {
+    .client-vehicle-name {
+      font-size: 18px;
+    }
+    .product-screen {
+      .leftpane {
+        visibility: visible !important;
+      }
+      .leftpane {
+        visibility: visible !important;
+      }
+    }
+    .top-content {
+      .cus_search {
+        .not_show();
+      }
+    }
+  }
+  .top-content {
+    .searchbox {
+      .fa.fa-arrow-left {
+        .not_show();
+      }
+      .search_clear {
+        display: none;
+      }
+      input {
+        position: relative;
+        top: -14px;
+      }
+      #open_cam {
+        .not_show();
+      }
+    }
+  }
+  .client-details {
+    #vehicle {
+      font-size: 24px;
+    }
+    #open {
+      .not_show();
+    }
+  }
+  //-------------->(Roja 31-7-18)
+  .control-button-sale {
+    display: inline-block;
+    margin-left: 5px;
+    width: 405px;
+    height: 40px;
+    text-align: center;
+    color: #555555;
+    border-color: #bfbfbf;
+    .aname {
+      position: absolute;
+      left: 173px;
+      top: 13px;
+      font-size: 20px;
+    }
+    .pos-so-cart {
+      position: absolute;
+      left: 30px;
+      top: 13px;
+      margin-right: 8px;
+      font-size: 18px;
+      background: rgba(255, 255, 255, 0.5);
+      line-height: 30px;
+      width: 30px;
+      border-radius: 100%;
+    }
+  }
+  //..................end(31.7.18)
+  .actionpad {
+    .button.pay {
+      .fa.fa-chevron-circle-right {
+        font-size: 60px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: @screen-xs-min) and (max-device-width: @screen-xs-max) {
+  .pos {
+    font-size: 1.2em;
+    .modal-dialog {
+      .popup-password {
+        height: 50% !important;
+        width: 50% !important;
+        .popup-input {
+          width: 70%;
+          height: 10%;
+        }
+        .popup-numpad {
+          width: 332px;
+          .input-button {
+            height: 88px;
+            width: 98px;
+            padding: 0;
+            border-radius: 25px;
+            margin: 4px;
+          }
+        }
+      }
+      .popup {
+        width: 80%;
+        height: 800px;
+        font-size: 55px;
+        border-radius: 9px;
+        .selection {
+          max-height: 300px;
+          font-size: 30px;
+          width: auto;
+          line-height: 85px;
+          margin-top: -1px;
+          border-top: solid 6px rgba(60, 60, 60, 0.1);
+        }
+        input {
+          min-height: 100px;
+          font-size: 40px;
+          padding: 20px;
+          border-radius: 6px;
+          box-shadow: 0px 0px 0px 3px rgb(220, 220, 220) inset;
+        }
+        .title {
+          padding: 30px;
+          border-radius: 6px 6px 0px 0px;
+          border-bottom: solid 4px rgba(60, 60, 60, 0.1);
+        }
+        .body {
+          font-size: 40px;
+          margin-top: 45px;
+          padding: 10px;
+        }
+        .footer {
+          height: 170px;
+          border-top: solid 2px rgba(60, 60, 60, 0.1);
+        }
+        .button {
+          width: 40%;
+          height: 75%;
+          line-height: 121px;
+          text-align: center;
+          border-radius: 6px;
+          margin-top: 13px;
+          margin-right: 35px;
+          font-size: 30px;
+          font-weight: bold;
+          cursor: pointer;
+          border: solid 2px rgba(60, 60, 60, 0.1);
+          background: rgba(0, 0, 0, 0.05);
+        }
+      }
+    }
+    .pos-topheader {
+      font-size: 2em;
+      height: 100px;
+      .pos-branding {
+        width: 318px;
+        top: 0px;
+        .pos-logo {
+          height: 28px;
+          margin-left: 7px;
+          margin-top: 2px;
+          display: none;
+        }
+        .username {
+          font-size: 47px;
+          margin-right: 26px;
+          line-height: 47px;
+          font-weight: bold;
+          margin-top: 8.5%;
+        }
+      }
+      .pos-rightheader {
+        left: 344px;
+        top: 0px;
+        .order-selector {
+          margin-top: 3%;
+        }
+        .oe_status {
+          margin-top: 3%;
+        }
+        .header-button {
+          padding-left: 67px;
+          font-size: 57px;
+          margin-top: 0%;
+          height: 100px;
+          line-height: 100px;
+          font-weight: 700;
+          font-style: italic;
+        }
+      }
+    }
+    .mode-button.selected-mode {
+      color: white;
+      background: #6EC89B;
+      border-color: #555555 !important;
+    }
+    .pos-content {
+      top: 100px;
+    }
+    .pos-switchbuttons {
+      position: absolute;
+      top: 0.6%;
+      width: 100%;
+      font-size: 2em;
+      .list {
+        position: relative;
+        top: 10px;
+      }
+      .switchorder {
+        width: 49%;
+        font-size: 2.4em;
+        border-top: 0.1em solid @primary_green1;
+      }
+      .switchpay {
+        width: 50%;
+        font-size: 2.4em;
+        border-top: 0.1em solid #d3d3d3;
+        .order-pay {
+          .count {
+            width: 70px;
+            height: 70px;
+            background: #4dd298;
+            position: absolute;
+            border-radius: 35px;
+            left: 78%;
+            top: 0px;
+            font-size: 40px;
+            color: #ffffff;
+            line-height: 71px;
+            font-weight: bold;
+            //visibility:hidden;
+          }
+        }
+      }
+    }
+    input {}
+    //....................................Product loading screen....................................
+    .loader {
+      background: white;
+      color: @primary_green;
+    }
+    .loader-feedback {
+      width: 60%;
+      left: 40%;
+      height: 200px;
+      .progressbar {
+        background: #f0eeee;
+        height: 15%;
+        border-radius: 5px;
+        .progress {
+          width: 100%;
+          background: @loader_color;
+          border-radius: 5px;
+        }
+      }
+    }
+    //..........................................Receipt screen..................................
+    .receipt-screen {
+      .screen-content {
+        .centered-content {
+          right: 0;
+          top: 10%;
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          .button {
+            line-height: 3em;
+            font-size: 2em;
+            border-radius: 0.3em;
+          }
+        }
+      }
+      .pos-sale-ticket {
+        width: 50%;
+        padding: 1.5em;
+        font-size: 1.4em;
+        padding-bottom: 3em;
+      }
+    }
+    //............................................Product listing screen...............................
+    .product {
+      line-height: 10em;
+      font-size: 1.3em;
+      margin: 16px !important;
+      width: 46%;
+      height: 14em;
+      border: 0.1em solid #e2e2e2;
+      border-radius: 0.3em;
+      border-bottom-width: 0.3em;
+    }
+    product-list {
+      padding: 1em;
+    }
+    .product-screen {
+      .leftpane {
+        visibility: hidden;
+        opacity: 0;
+        width: 100%;
+        top: 9%;
+        height: 91%;
+        .window {}
+        .control-button {
+          border: solid 0.1em #bfbfbf;
+          line-height: 3.8em;
+          min-width: 80%;
+          border-radius: 0.3em;
+          padding: 0em 1em;
+          font-size: 1.8em;
+          margin-left: 0.589970501%;
+          margin-bottom: 0.589970501%;
+        }
+      }
+      .order {
+        padding-bottom: 0.8em;
+        padding-top: 0.8em;
+        font-size: 2em;
+        max-width: 100% !important;
+        .summary {
+          .line .subentry {
+            font-size: 0.8em;
+          }
+          .total {
+            font-size: 1.5em;
+          }
+        }
+      }
+      //....................>(Roja 31.7.18)
+      .control-button-sale {
+        top: 2.1%;
+        left: 50%;
+        line-height: 2.4em;
+        font-size: 1.6em;
+        border: solid 0.1em #cacaca;
+        height: 5.1em;
+        width: 47%;
+        font-weight: bold;
+        position: absolute;
+        display: block; //FIXME
+        i.fa.fa-shopping-cart.pos-so-cart {
+          border: 0;
+          background: 0;
+          width: 1.8em;
+          line-height: 0.8em;
+          font-size: 2em;
+          top: 33%;
+          left: 1%;
+          position: absolute;
+        }
+        .aname {
+          position: absolute;
+          left: 36%;
+          top: 25%;
+          font-size: 37px;
+        }
+      }
+      //----------------->
+      .actionpad {
+        float: none;
+        width: 96%;
+        margin: 16px;
+        border: 0;
+        border-top-left-radius: 0.1em;
+        border-bottom-left-radius: 0.4em;
+        .actionname {
+          font-size: 1.3em !important;
+          //--->(Roja 31.7.18)
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          //.......>
+        }
+        .button.pay {
+          line-height: 4.4em;
+          font-size: 1.6em;
+          border: solid 0.1em #cacaca;
+          color: #ffffff;
+          background: #6ec89b;
+          height: 5.1em;
+          line-height: 4em;
+          font-weight: bold;
+          .fa.fa-chevron-circle-right {
+            border: 0;
+            background: 0;
+            width: 1.8em;
+            height: 1.8em;
+            line-height: 0.8em;
+            font-size: 2em;
+            position: absolute;
+            left: 10px;
+            top: 34%;
+          }
+          .textpay {
+            position: relative;
+            bottom: 19px;
+            font-size: 1.3em;
+          }
+          .pay-circle {
+            border: 0;
+            background: white;
+            width: 74px;
+            height: 74px;
+            line-height: 1em;
+            font-size: 2em;
+            position: absolute;
+            left: 34px;
+            top: 27%;
+            color: #6ec89b;
+            .fa {
+              position: relative;
+              top: 2px;
+              left: 3px;
+            }
+          }
+        }
+        .button.set-customer {
+          padding-left: 4em;
+          padding-right: 0;
+          line-height: 1.4em;
+          font-size: 1.6em;
+          border: solid 0.1em #cacaca;
+          height: 5.1em;
+          width: 50%; //(Roja 1.8.18) FIXME
+          font-weight: bold;
+        }
+        .button {
+          font-size: 1.4em;
+          border-right: 0.1em solid;
+          border-bottom: 0.1em solid;
+          .set-customer {
+            height: 3em;
+          }
+          .fa-user {
+            border: 0;
+            background: 0;
+            width: 1.8em;
+            height: 1.8em;
+            line-height: 0.8em;
+            font-size: 2em;
+            top: 34%;
+          }
+          .pay {
+            height: 12em !important;
+            .pay-circle {
+              font-size: 3.2em;
+              line-height: 2em;
+              width: 2em;
+            }
+          }
+        }
+      }
+      .numpad {
+        float: none;
+        width: 96%;
+        margin-top: 16px;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-bottom: 16px;
+        border-top: 3px solid;
+        border-left: 3px solid;
+        border-top-right-radius: 0.4em;
+        button {
+          height: 120px;
+          width: 243px;
+          font-size: 3em;
+          border-right: 3px solid;
+          border-bottom: 3px solid;
+        }
+        button:last-child {
+          border-bottom-right-radius: 0em;
+        }
+        img {
+          height: 1.7em;
+          width: 1.5em;
+        }
+      }
+      .rightpane {
+        top: 9%;
+        height: 91%;
+        left: 0;
+        visibility: visible;
+        opacity: 1;
+        .breadcrumb {
+          height: 4.8em;
+        }
+        .breadcrumb-button.breadcrumb-home {
+          line-height: 1em;
+          padding-top: 0.3em;
+          width: 3em;
+          font-size: 3em;
+        }
+        .breadcrumb-arrow {
+          width: 3em;
+          height: 100%;
+        }
+        .breadcrumb-button {
+          font-size: 1.8em;
+          line-height: 2.5em;
+          color: #555555;
+        }
+        .searchbox {
+          right: 0;
+          width: 25%;
+          display: none;
+          input {
+            width: 138px;
+            border: 0.1em solid #cecbcb;
+            padding: 0.5em 1.5em;
+            padding-left: 3.8em;
+            margin: 2.585938%;
+            border-radius: 2em;
+            font-size: 1em;
+            height: 2em;
+          }
+          .search-clear {
+            width: 3.2em;
+            height: 3em;
+            top: 0.5em;
+            left: 0.5em;
+            display: none;
+          }
+        }
+        header {
+          height: 4.8em;
+        }
+        .categories {
+          border-bottom: solid 0.3em rgb(110, 200, 155);
+        }
+        .category-list.simple {
+          font-size: 1.3em;
+        }
+        .category-simple-button {
+          width: 31%;
+          font-size: 1.8em;
+          margin-right: 0.1em;
+          margin-bottom: 0.1em;
+          line-height: 3.2em;
+        }
+        .product-name {
+          line-height: 1.4em;
+          width: 100%;
+          padding: 0.3em;
+          padding-top: 0.5em;
+          font-size: 1.5em;
+          font-weight: bold;
+        }
+        .price-tag {
+          top: 0.2em;
+          right: 0;
+          line-height: 1.3em;
+          padding: 0.2em 0.5em;
+          border-radius: 0.2em;
+          font-size: 1.5em;
+        }
+        .product-img {
+          width: 100%;
+          height: 10em;
+          .cir {
+            visibility: hidden;
+            position: absolute;
+            top: 51%;
+            font-size: 4em;
+            height: 70%;
+            left: 36%;
+            i.fa.fa-plus-circle {
+              color: #4cd096;
+            }
+          }
+          &:focus {
+            font-size: 5em;
+          }
+          img {
+            min-width: 9em;
+            max-height: 8em;
+            padding-top: 2.5em;
+          }
+        }
+      }
+    }
+    //.......................................................Paymentline screen..................
+    .paymentlines {
+      .label>* {
+        font-size: 2em;
+        padding: 1em;
+      }
+      .selected {
+        font-size: 2em;
+      }
+    }
+    .paymentline {
+      font-size: 2em;
+      .col-name {
+        font-size: 1em;
+      }
+    }
+    .paymentline>* {
+      padding: 10px 40px;
+    }
+    .payment-numpad {
+      width: 100%;
+      padding: 1.6em;
+      height: 55%;
+      .numpad {
+        width: 100%;
+        border-color: #555555;
+        border-top: 3px solid;
+        border-left: 2px solid;
+        button {
+          width: 239px;
+          height: 124px;
+          border-right: 3px solid;
+          border-bottom: 3px solid;
+        }
+        .mode-button {
+          font-size: 2.4em;
+        }
+        img {
+          height: 2em;
+          width: 2em;
+        }
+        .input-button {
+          font-size: 2.2em;
+        }
+      }
+    }
+    tr.paymentline.extra {
+      font-size: 2em;
+    }
+    .clientlist-screen {
+      .client-detail {
+        line-height: 2.4em;
+        font-size: 2.5em;
+        input {
+          padding: 0.4em;
+          border-radius: 0.3em;
+          border: solid 0.1em #cecbcb;
+          margin-bottom: 0.391389432%;
+          width: 14em;
+          font-size: 1em;
+        }
+        select {
+          padding: 0.4em;
+          border-radius: 0.3em;
+          border: solid 0.1em #cecbcb;
+          margin-bottom: 0.391389432%;
+          width: 14em;
+          font-size: 1.2em;
+        }
+      }
+      .client-details {
+        .edit {
+          .client-name {
+            font-size: 2em !important;
+            width: 50% !important;
+          }
+          .client-vehicle-name {
+            .client-name();
+          }
+        }
+        input {
+          padding: 0.4em;
+          border-radius: 0.3em;
+          border: solid 0.1em #cecbcb;
+          margin-bottom: 0.391389432%;
+          width: 14em;
+          font-size: 1.2em;
+          .client-name {
+            margin: 1.761252446% 0.587084149%;
+          }
+        }
+      }
+      .client-picture {
+        height: 12em;
+        width: 12em;
+        border-radius: 3em;
+        >.fa {
+          line-height: 4em;
+          font-size: 3em;
+        }
+      }
+      #contain {
+        input {}
+      }
+      .client-picture>img {
+        height: 100%;
+        min-height: 100%;
+        width: 100%;
+      }
+      .client-details-left {
+        width: 100%;
+        float: left;
+      }
+      .client-details-right {
+        width: 100%;
+        float: right;
+      }
+      .client-main {
+        display: inline-grid;
+        .client-picture {
+          margin-left: 38%;
+          margin-right: 38%;
+          margin-bottom: 5%;
+        }
+        .client-name {
+          width: 91% !important;
+          height: 70% !important;
+          font-size: 2.5em !important;
+          position: relative;
+          left: 5%;
+        }
+        .client-vehicle-name {
+          .client-name();
+          height: 95% !important;
+          text-transform: uppercase;
+        }
+        #open {
+          position: absolute;
+          font-size: 4em;
+          left: 80%;
+          top: 22%;
+          width: 14%;
+          color: rgb(200, 200, 200);
+        }
+      }
+      #contain {
+        padding-top: 4%;
+        padding-left: 1em;
+      }
+      .client-details-box {
+        margin-top: 5%;
+        margin-bottom: 20%;
+      }
+      .edit-buttons {
+        position: absolute;
+        right: 16px;
+        top: 2em;
+        .button {
+          margin-left: 1.56555773%;
+          font-size: 4em;
+        }
+      }
+      .client-name {
+        font-size: 2.5em;
+        line-height: 3em;
+        margin-bottom: 1.56555773%;
+        width: 50%;
+        padding-left: 10%;
+      }
+      .client-detail>.label {
+        width: 6em;
+        margin-right: 0.078431373%;
+        text-align: center;
+      }
+      .client-list {
+        font-size: 1.6em;
+        width: 100%;
+        line-height: 4em;
+        tr {
+          font-size: 1.5em;
+          .trhead {
+            width: 100%;
+            position: fixed;
+          }
+          //------------->(Roja 30.7.18)
+          td {
+            overflow: hidden;
+            white-space: nowrap;
+          }
+        }
+        th {
+          color: @primary_green;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        //....................
+      }
+      .screen-content {
+        .top-content {
+          .button.highlight {
+            position: absolute;
+            top: 8.4em;
+            width: 33%;
+            margin-left: 1.56555773%;
+            border: 0;
+            right: 0;
+            z-index: 1;
+          }
+          .cus_search {
+            position: absolute;
+            left: 48%;
+            #user {
+              font-size: 2.2em;
+              color: #555555;
+              position: absolute;
+              left: 27%;
+              top: 26%;
+            }
+            #search {
+              font-size: 6em;
+              color: #e6e6e6;
+            }
+          }
+        }
+      }
+      .searchbox {
+        margin-left: 0;
+        margin-top: 0%;
+        left: 0;
+        width: 100%;
+        visibility: hidden;
+        input {
+          font-size: 2em;
+          width: 72%;
+          border: 0.1em solid #cecbcb;
+          padding: 3%;
+          padding-left: 4.8em;
+          margin: 0.587084149%;
+          background: none;
+          border-radius: 2em;
+        }
+        .search-clear {
+          position: absolute;
+          width: 14%;
+          height: 79%;
+          top: 11px;
+          left: 11px;
+          cursor: pointer;
+          .fa.fa-arrow-left {
+            font-size: 4em;
+            width: 1em;
+            position: relative;
+            top: 10%;
+            color: rgb(200, 200, 200);
+          }
+        }
+        #open_cam {
+          position: absolute;
+          font-size: 4em;
+          left: 80%;
+          top: 20%;
+          width: 14%;
+          color: rgb(200, 200, 200);
+        }
+      }
+      .client-details {
+        padding: 1.6em;
+        border-bottom: 0;
+      }
+      .button.new-customer {
+        margin-left: 11.741682975%;
+        left: 65%;
+      }
+    }
+  }
+  .screen-content {
+    .top-content {
+      height: 6.5em;
+      border-bottom: dashed 0.1em rgb(215, 215, 215);
+      //top:1em;
+      .button {
+        line-height: 1.8em;
+        padding: 0.3em 1.3em;
+        font-size: 2em;
+        margin: 0.99009901%;
+        border-radius: 0.3em;
+        border: solid 0.1em rgb(209, 209, 209);
+      }
+    }
+    .full-content {
+      top: 6.8em;
+      border-bottom: dashed 0.1em rgb(215, 215, 215);
+      .subwindow.collapsed {
+        height: auto;
+        max-height: 97%;
+      }
+    }
+    .left-content.pc40 {
+      top: 10%;
+      width: 96%;
+      left: 0%;
+      height: 25%;
+      padding-left: 0.6em;
+    }
+    .right-content.pc60 {
+      left: 0;
+      height: 65%;
+      top: 35%;
+      overflow: scroll;
+      overflow-y: scroll;
+    }
+  }
+  .paymentmethods {
+    .button {
+      line-height: 4.4em;
+      font-size: 2em;
+      border: solid 0.1em rgb(202, 202, 202);
+      width: 100%;
+    }
+    .button:first-child {
+      border-top-width: 0.1em;
+      border-top-left-radius: 0.3em;
+      border-top-right-radius: 0.3em;
+    }
+    h1.message {
+      color: #cf83b8;
+      font-size: 2.5em;
+      width: 95%;
+      position: relative;
+      left: 5%;
+    }
+    i.fa.fa-money {
+      font-size: 1.5em;
+      color: goldenrod;
+    }
+  }
+  .payment-screen {
+    .paymentlines-empty {
+      .total {
+        font-size: 6.4em;
+      }
+      .message {
+        font-size: 1.5em;
+      }
+    }
+    .paymentlines-container {
+      padding: 16px;
+      max-height: 300px;
+      overflow: scroll;
+    }
+    .payment-buttons {
+      width: 100%;
+      padding: 1.6em;
+      float: left;
+      .button {
+        font-size: 1.9em;
+        line-height: 4em;
+        background-color: #6ec89b;
+        color: white;
+        font-weight: bold;
+        //-------------->(Roja 27.7.18)
+        &:not(:first-child) {
+          background: white !important;
+          color: black !important;
+        }
+        &.highlight:not(:first-child) {
+          background-color: #6ec89b !important;
+          color: white !important;
+          .fa {
+            background: 0;
+          }
+        }
+        //---------------->end(27.7.18)
+        .fa {
+          border: 0;
+          background: 0;
+          width: 1.8em;
+          height: 1.8em;
+          line-height: 0.8em;
+          font-size: 2em;
+        }
+      }
+    }
+  }
+}

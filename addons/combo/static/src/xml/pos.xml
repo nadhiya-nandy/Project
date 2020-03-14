@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  <t t-name="ProductScreenWidget">
+    <div class="product-screen screen">
+      <div class="leftpane" id="leftpane">
+        <div class='window'>
+          <div class='subwindow'>
+            <div class='subwindow-container'>
+              <div class='subwindow-container-fix'>
+                <div class="placeholder-OrderWidget"></div>
+              </div>
+            </div>
+          </div>
+          <div class='subwindow collapsed'>
+            <div class='subwindow-container'>
+              <div class='subwindow-container-fix pads'>
+                <div class="control-buttons oe_hidden"></div>
+                <div class="placeholder-ActionpadWidget"></div>
+                <div class="placeholder-NumpadWidget"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rightpane" id="rightpane">
+        <table class="layout-table">
+          <tr class="header-row">
+            <td class="header-cell">
+              <span class="placeholder-ProductCategoriesWidget" />
+            </td>
+          </tr>
+          <tr class="content-row">
+            <td class="content-cell">
+              <div class="content-container">
+                <span class="placeholder-ProductListWidget" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="pos-switchbuttons">
+      <button class='switchorder' id='switchorder' onclick="document.getElementById('leftpane').style.visibility= 'hidden';document.getElementById('leftpane').style.opacity= '0'; document.getElementById('rightpane').style.visibility= 'visible';document.getElementById('rightpane').style.opacity= '1';document.getElementById('switchorder').style.borderTop='0.1em solid #6ec89b';document.getElementById('switchpay').style.borderTop='0.1em solid #d3d3d3';">
+        <div class='order-cart'>
+          <img class="list"  src="/combo/static/src/img/li.svg" width="100" height="80" />
+        </div>
+      </button>
+      <button class='switchpay' id='switchpay' onclick="document.getElementById('rightpane').style.visibility= 'hidden';document.getElementById('rightpane').style.opacity= '0'; document.getElementById('leftpane').style.visibility= 'visible';
+        document.getElementById('leftpane').style.opacity= '1';document.getElementById('switchpay').style.borderTop='0.1em solid #6ec89b';document.getElementById('switchorder').style.borderTop='0.1em solid #d3d3d3';">
+        <div class='order-pay'>
+          <div class="count"></div>
+          <img class="list"  src="/combo/static/src/img/shopping-cart.svg" width="100" height="80" />
+        </div>
+      </button>
+    </div>
+  </t>
+  <t t-name="Product">
+    <span class='product' t-att-data-product-id="product.id">
+      <div class="product-img" id="pimg" value="11">
+        <img t-att-src='image_url' /> 
+        <t t-if="!product.to_weight">
+          <span class="price-tag">
+            <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')"/>
+          </span>
+        </t>
+        <t t-if="product.to_weight">
+          <span class="price-tag">
+            <t t-esc="widget.format_currency(product.get_price(pricelist, 1),'Product Price')+'/'+widget.pos.units_by_id[product.uom_id[0]].name"/>
+          </span>
+        </t>
+      </div>
+      <div class="product-name">
+        <t t-esc="product.display_name"/>
+      </div>
+    </span>
+  </t>
+  <t t-name="Chrome">
+    <div class="pos">
+      <div class="pos-topheader" style="visibility:visible">
+        <div class="pos-branding">
+          <img class="pos-logo" src="/point_of_sale/static/src/img/logo.png" />
+          <span class="placeholder-UsernameWidget"></span>
+        </div>
+        <div class="pos-rightheader">
+          <span class="placeholder-OrderSelectorWidget"></span>
+          <!-- here goes header buttons -->
+        </div>
+      </div>
+      <div class="pos-content">
+        <div class='window'>
+          <div class='subwindow'>
+            <div class='subwindow-container'>
+              <div class='subwindow-container-fix screens'>
+                <!-- here go the screens -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="placeholder-OnscreenKeyboardWidget"></div>
+      </div>
+      <div class='popups'>
+        <!-- here go the popups -->
+      </div>
+      <div class="loader">
+        <div class='loader-feedback oe_hidden'>
+          <h1 class='message'>Loading products...</h1>
+          <div class='progressbar'>
+            <div class='progress' width='50%'></div>
+          </div>
+          <div class='oe_hidden button skip'>
+            Skip
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+  <t t-name="PaymentScreenWidget">
+    <div class='payment-screen screen'>
+      <div class='screen-content'>
+        <div class='top-content'>
+          <span class='button back'>
+          <i class='fa fa-angle-double-left'></i>
+          Back
+          </span>
+          <h1>Payment</h1>
+          <span class='button next'>
+          Validate
+          <i class='fa fa-angle-double-right'></i>
+          </span>
+        </div>
+        <div class='left-content pc40 touch-scrollable scrollable-y'>
+          <div class='paymentmethods-container'>
+          </div>
+        </div>
+        <div class='right-content pc60 touch-scrollable scrollable-y'>
+          <section class='paymentlines-container'>
+          </section>
+          <section class='payment-numpad'>
+          </section>
+          <div class='payment-buttons'>
+            <div class='button js_set_customer'>
+              <i class='fa fa-user' /> 
+              <span class='js_customer_name'>
+                <div class="actionname">
+                  <t t-if="widget.pos.get_client()">
+                    <t t-esc="widget.pos.get_client().name" />
+                  </t>
+                  <t t-if="!widget.pos.get_client()">
+                    Customer
+                  </t>
+                </div>
+              </span>
+            </div>
+            <t t-if='widget.pos.config.iface_invoicing'>
+              <t t-if='widget.pos.get_order()'>
+                <div t-attf-class='button js_invoice #{ widget.pos.get_order().is_to_invoice() ? "highlight" : ""} '>
+                  <i class='fa fa-file-text-o' /> Invoice
+                </div>
+              </t>
+            </t>
+            <t t-if='widget.pos.config.tip_product_id'>
+              <div class='button js_tip'>
+                <i class='fa fa-heart' /> Tip 
+              </div>
+            </t>
+            <t t-if='widget.pos.config.iface_cashdrawer'>
+              <div class='button js_cashdrawer'>
+                <i class='fa fa-archive' /> Open Cashbox
+              </div>
+            </t>
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+  <t t-name="ClientListScreenWidget">
+    <div class="clientlist-screen screen">
+      <div class="screen-content">
+        <section class="top-content">
+          <span class='button back'>
+          <i class='fa fa-angle-double-left'></i>
+          Cancel
+          </span>
+          <div class='cus_search'>
+            <i class="fa fa-user" id="user"/>
+            <i class="fa fa-search" id="search"/>
+          </div>
+          <span class='searchbox' >
+          <input placeholder='Search Customers' id="number" />
+          <span class='search-clear'><i class="fa fa-arrow-left"></i></span>
+          <i class='fa fa-camera' id="open_cam" ></i>
+          </span>
+          <span class='searchbox'></span>
+          <span class='button new-customer'>
+          <i class='fa fa-user'></i>
+          <i class='fa fa-plus'></i>
+          </span>
+          <span class='button next oe_hidden highlight' id="c_sel">
+          Select Customer
+          <i class='fa fa-angle-double-right'></i>
+          </span>
+        </section>
+        <section class="full-content">
+          <div class='window'>
+            <section class='subwindow collapsed touch-scrollable scrollable-y'>
+              <div class='subwindow-container collapsed'>
+                <div class='subwindow-container-fix client-details-contents'>
+                </div>
+              </div>
+            </section>
+            <section class='subwindow'>
+              <div class='subwindow-container'>
+                <div class='subwindow-container-fix touch-scrollable scrollable-y'>
+                  <table class='client-list'>
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                      </tr>
+                    </thead>
+                    <tbody class='client-list-contents'>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </div>
+  </t>
+  <t t-name="PaymentScreen-Paymentmethods">
+    <div class='paymentmethods'>
+      <t t-foreach="widget.pos.cashregisters" t-as="cashregister">
+        <div class="button paymentmethod" t-att-data-id="cashregister.journal_id[0]">
+          <t t-esc="cashregister.journal_id[1]" />
+        </div>
+      </t>
+    </div>
+  </t>
+  <t t-name="TextInputPopupWidget">
+    <div class="modal-dialog">
+      <div class="popup popup-textinput">
+        <p class="title">
+          <t t-esc=" widget.options.title || '' " />
+        </p>
+        <input type='text' name="petrol_price"  style="margin:20px;" placeholder="Petrol Price" t-att-value="widget.options.value || ''"></input>
+        <input type='text' style="margin:20px;" name="diesel_price" placeholder="Diesel Price" t-att-value="widget.options.value || ''"></input>
+        <div class="footer">
+          <div class="button confirm">
+            Ok 
+          </div>
+          <div class="button cancel">
+            Cancel 
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+  <t t-name="PaymentScreen-Numpad">
+    <div class="numpad">
+      <button class="input-button number-char" data-action='1'>1</button>
+      <button class="input-button number-char" data-action='2'>2</button>
+      <button class="input-button number-char" data-action='3'>3</button>
+      <button class="mode-button" width="24" height="21" data-action='+10'>+10</button>
+      <br />
+      <button class="input-button number-char" data-action='4'>4</button>
+      <button class="input-button number-char" data-action='5'>5</button>
+      <button class="input-button number-char" data-action='6'>6</button>
+      <button class="mode-button" data-action='+20'>+20</button>
+      <br />
+      <button class="input-button number-char" data-action='7'>7</button>
+      <button class="input-button number-char" data-action='8'>8</button>
+      <button class="input-button number-char" data-action='9'>9</button>
+      <button class="mode-button" data-action='+50'>+50</button>
+      <br />
+      <button class="input-button numpad-char" data-action='CLEAR' >C</button>
+      <button class="input-button number-char" data-action='0'>0</button>
+      <button class="input-button number-char" t-att-data-action='widget.decimal_point'>
+        <t t-esc='widget.decimal_point'/>
+      </button>
+      <button class="input-button numpad-backspace" data-action='BACKSPACE' >
+      <img src="/point_of_sale/static/src/img/backspace.png" width="24" height="21" />
+      </button>
+    </div>
+  </t>
+</templates>

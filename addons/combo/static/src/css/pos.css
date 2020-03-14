@@ -1,0 +1,10 @@
+.pos .can-sale.cansale {
+    color: white;
+    background: #cf83b8;
+    border-color: transparent;
+}
+.pos .can-sale.cansale:hover {
+    background: #cf83b8;
+    color: white;
+    border-color: transparent;
+}
